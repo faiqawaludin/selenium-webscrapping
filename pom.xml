@@ -16,31 +16,25 @@
 
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.29.0</version>
         </dependency>
-
-        <!-- Apache POI (Excel handling) -->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <version>5.2.3</version>
         </dependency>
-
-        <!-- WebDriverManager (Opsional, untuk otomatisasi WebDriver) -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>5.7.0</version>
         </dependency>
-
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>2.22.1</version> <!-- Versi terbaru -->
+            <version>2.22.1</version>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
