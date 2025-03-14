@@ -35,13 +35,13 @@ public class headlessScrapper{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        String keyword = "PT Len";
+        String keyword = "PT Len Industri";
         String searchUrl = "https://www.google.com/search?q=" + keyword + "&tbm=nws";
         List<String[]> newsList = new ArrayList<>();
 
         try {
             driver.get(searchUrl);
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 3; i++) {
                 if (i > 0) {
                     js.executeScript("window.open()");
                     List<String> tabs = new ArrayList<>(driver.getWindowHandles());
@@ -71,7 +71,6 @@ public class headlessScrapper{
                             WebElement dateElement = news.findElement(By.xpath(".//div[contains(@class, 'OSrXXb')]//span"));
                             String rawDate = dateElement.getText();
 
-                            // Konversi jika format relatif
                             date = convertRelativeDate(rawDate);
                         } catch (NoSuchElementException e) {
                             System.out.println("Tanggal tidak ditemukan untuk: " + title);
@@ -126,7 +125,7 @@ public class headlessScrapper{
         return convertedDate.format(formatter);
     }
 
-    private static void saveToExcel(List<String[]> data, String fileName) {
+    public static void saveToExcel(List<String[]> data, String fileName) {
         Workbook workbook = new XSSFWorkbook();
         Sheet sheet = workbook.createSheet("PT Len News");
 
